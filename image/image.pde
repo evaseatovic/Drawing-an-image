@@ -10,7 +10,7 @@ appHeight = height;
 //
 //Population
 pic = loadImage("../images used/20Ounce_NYAS-Apples2.png");
-tint(0, 153, 204, 126);  // Tint blue and set transparency
+tint(0, 180, 304, 120);  // Tint blue and set transparency
 backgroundImageX = appWidth*0;
 backgroundImageY = appHeight*0;
 backgroundImageWidth = appWidth-1; 
