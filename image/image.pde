@@ -35,17 +35,26 @@ if ( widthLarger == true ) imageWidthRatio = largerDimension / largerDimension;
 if ( widthLarger == true ) imageHeightRatio = smallerDimension / largerDimension;
 if ( heightLarger == true ) imageWidthRatio = smallerDimension / largerDimension;
 if ( heightLarger == true ) imageHeightRatio = largerDimension / largerDimension;
-*/
-//
-//Better Image Stretch Algorithum
+
+  //
+  //Better Image Stretch Algorithum
+  float picWidthAdjusted=0.0, picHeightAdjusted=0.0;
 //We know the width is the larger dimention
-float picWidthAdjusted, picHeightAdjusted;
 if ( appWidth >= picWidth ) {
   picWidthAdjusted = appWidth;
   //
   if ( widthLarger == true ) imageWidthRatio = largerDimension / largerDimension;
   if ( heightLarger == true ) imageWidthRatio = smallerDimension / largerDimension;
+  //
+  if ( appHeight >= picHeight ) {
+    //calculated Dimension b/c smaller than width
+    if ( heightLarger == true ) imageHeightRatio = smallerDimension / largerDimension;
+    if ( heightLarger == true ) imageHeightRatio = largerDimension / largerDimension;
+  } else {
+    //Image smaller than CANVAS needs separate alorithum
+  }
 } else {
+  //Image smaller than CANVAS, needs separate algorithum
 }
 //Population
 pic = loadImage("../images used/20Ounce_NYAS-Apples2.png");
