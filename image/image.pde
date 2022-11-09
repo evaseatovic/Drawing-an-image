@@ -8,7 +8,8 @@ float backgroundImageX, backgroundImageY, backgroundImageWidth, backgroundImageH
 float smallerDimension, largerDimension, imageWidthRatio=0.0, imageHeightRatio=0.0;
 Boolean widthLarger=false, heightLarger=false;
 PImage pic;
-Boolean nightMode=false;
+Boolean nightMode=true;
+int tintdaym
 //
 void setup() {
   size(800, 600); //Landscape
@@ -47,18 +48,44 @@ if ( appWidth >= picWidth ) {
     if ( heightLarger == true ) imageHeightRatio = largerDimension / largerDimension;
   } else {
     //Image smaller than CANVAS needs separate alorithum
+    println("CANVAS is smaller than image");
   }
 } else {
   //Image smaller than CANVAS, needs separate algorithum
-  println("CANVAS is smaller then image");
+  println("CANVAS is smaller than image");
 }
+ //
+ //Population
+ pic = loadImage("../images used/20Ounce_NYAS-Apples2.png");
+ backgroundImageX = appWidth*0;
+ backgroundImageY = appHeight*0;
+ backgroundImageWidth = appWidth-1;
+ backgroundImageHeight = appHeight-1;
+//
+//Verify Variable Valuse after Algorithum
+println("App Width:", appWidth, " and App Height:", appHeight);
+println();
+println();
+println();
 }//End setup
 //
 void draw() {}//End draw
 // 
 void keyPressed() {}//End keyPressed
 //
-void mousePressed() {}//End mousePressed
+void mousePressed() {
+   //  
+  //Mouse Pressed will control background image
+  if ( mouseButton == LEFT) {
+    nightMode = true;
+    tint(64, 64, 40, 50); //RGB: Night Mode
+    image( pic, backgroundImageX, backgroundImageY, picWidthAdjusted, picHeightAdjusted);
+  }
+  if ( mouseButton == RIGHT ) {
+    nightMode = false;
+    tint();
+    image(pic, backgroundImageX, backgroundImageY, picWidthAdjusted, picHeightAdjusted);
+}//End mousePressed
 //
 
 //Aspect Ratio of Background Image
@@ -72,13 +99,7 @@ if ( heightLarger == true ) imageHeightRatio = largerDimension / largerDimension
 
   //
  
-//Population
-pic = loadImage("../images used/20Ounce_NYAS-Apples2.png");
-backgroundImageX = appWidth*0;
-backgroundImageY = appHeight*0;
-backgroundImageWidth = appWidth-1;
-backgroundImageHeight = appHeight-1;
-//
+
 // Adjust Iamge Varaibles for Asepct Ratio
 
 picWidthAdjusted = backgroundImageWidth * imageWidthRatio;
