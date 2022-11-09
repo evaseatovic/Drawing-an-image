@@ -10,12 +10,13 @@ Boolean widthLarger=false, heightLarger=false;
 PImage pic;
 Boolean nightMode=false;
 //
-size(800, 600); //Landscape
-//Copy Display Algorithm from Hello World
-appWidth = width;
-appHeight = height;
+void setup() {
+  size(800, 600); //Landscape
+  //Copy Display Algorithm from Hello World
+  appWidth = width;
+  appHeight = height;
 //
-//Aspect Ratio of Background Image
+//Image Dimentions for Aspect Ratio
 //20Ounce_NYAS-Apples2.png
 int picWidth = 800;
 int picHeight = 600;
@@ -29,15 +30,9 @@ if ( picWidth >= picHeight ) { //True if Landscape or Square
   smallerDimension = picWidth;
   heightLarger = true;
 }
-//
-//Aspect Ratio Calculations
-if ( widthLarger == true ) imageWidthRatio = largerDimension / largerDimension;
-if ( widthLarger == true ) imageHeightRatio = smallerDimension / largerDimension;
-if ( heightLarger == true ) imageWidthRatio = smallerDimension / largerDimension;
-if ( heightLarger == true ) imageHeightRatio = largerDimension / largerDimension;
-
-  //
-  //Better Image Stretch Algorithum
+ //
+ //Teaching Example
+ //Better Image Stretch Algorithum
   float picWidthAdjusted=0.0, picHeightAdjusted=0.0;
 //We know the width is the larger dimention
 if ( appWidth >= picWidth ) {
@@ -55,7 +50,28 @@ if ( appWidth >= picWidth ) {
   }
 } else {
   //Image smaller than CANVAS, needs separate algorithum
+  println("CANVAS is smaller then image");
 }
+}//End setup
+//
+void draw() {}//End draw
+// 
+void keyPressed() {}//End keyPressed
+//
+void mousePressed() {}//End mousePressed
+//
+
+//Aspect Ratio of Background Image
+
+//
+//Aspect Ratio Calculations
+if ( widthLarger == true ) imageWidthRatio = largerDimension / largerDimension;
+if ( widthLarger == true ) imageHeightRatio = smallerDimension / largerDimension;
+if ( heightLarger == true ) imageWidthRatio = smallerDimension / largerDimension;
+if ( heightLarger == true ) imageHeightRatio = largerDimension / largerDimension;
+
+  //
+ 
 //Population
 pic = loadImage("../images used/20Ounce_NYAS-Apples2.png");
 backgroundImageX = appWidth*0;
