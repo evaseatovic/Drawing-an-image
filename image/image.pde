@@ -99,6 +99,8 @@ void setup()
 }//End setup
 //
 void draw() {
+  image(pic2,topX, topY, topWidth, topHeight)
+  image(pic3,bottomX, bottomY, bottomWidth, bottomHeight)
 }//End draw
 //
 void keyPressed() {
