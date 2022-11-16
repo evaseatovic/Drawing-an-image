@@ -24,16 +24,18 @@ void setup()
   //Image Dimensions for Aspect Ratio
   //20Ounce_NYAS-Apples2.png
   //Note: Dimensions are found in the image file / Right Click / Properties / Details
-  int picWidth = 800;
+  int picWidth = 800; //apple image
   int picHeight = 600;
-  int picWidth2 = 860;
+  int picWidth2 = 860; //fork image
   int picHeight2 = 529;
-  int picWidth3 = 325;
+  int picWidth3 = 325; //banana image 
   int picHeight3 = 485;
   //
   //Image Orientation: Landscape, Square, Portrait
-  float smallerDimension, largerDimension, imageWidthRatio=0.0, imageHeightRatio=0.0;
-  Boolean widthLarger=false, heightLarger=false;
+   float smallerDimension, largerDimension, imageWidthRatio=0.0, imageHeightRatio=0.0;
+  float smallerDimension2, largerDimension2, imageWidthRatio2=0.0, imageHeightRatio2=0.0;
+  float smallerDimension3, largerDimension3, imageWidthRatio3=0.0, imageHeightRatio3=0.0;
+  Boolean widthLarger=false, heightLarger=false, widthLarger2=false, heightLarger2=false;
   if ( picWidth >= picHeight ) { //True if Landscape or Square
     largerDimension = picWidth;
     smallerDimension = picHeight;
@@ -82,6 +84,8 @@ void setup()
   //
   //Population
  pic = loadImage("../images used/20Ounce_NYAS-Apples2.png");
+ pic2 = loadImage("../istockphoto-1154935375-612x612.jpg");
+ pic3 
   backgroundImageX = appWidth*0;
   backgroundImageY = appHeight*0;
   backgroundImageWidth = appWidth-1;
