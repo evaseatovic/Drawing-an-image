@@ -5,10 +5,12 @@
 //Global Variables
 int appWidth, appHeight;
 float backgroundImageX, backgroundImageY, backgroundImageWidth, backgroundImageHeight;
-float picWidthAdjusted=0.0, picHeightAdjusted=0.0;
 float topX, topY, topWidth, topHeight;
 float bottomX, bottomY, bottomWidth, bottomHeight;
-PImage pic;
+float picWidthAdjusted=0.0, picHeightAdjusted=0.0;
+float picWidthAdjusted2=0.0, picHeightAdjusted2=0.0;
+float picWidthAdjusted3=0.0, picHeightAdjusted3=0.0;
+PImage pic, pic2, pic3;
 Boolean nightMode=false;
 int tintDayMode=255, tintDayModeOpacity=50, tintRed=64, tintGreen=64, tintBlue=40, tintNightModeOpacity=85;
 //
@@ -24,10 +26,10 @@ void setup()
   //Note: Dimensions are found in the image file / Right Click / Properties / Details
   int picWidth = 800;
   int picHeight = 600;
-  int picWidth2 = ;
-  int picHeight2 = ;
-  int picWidth3 = ;
-  int picHeight3 = ;
+  int picWidth2 = 860;
+  int picHeight2 = 529;
+  int picWidth3 = 325;
+  int picHeight3 = 485;
   //
   //Image Orientation: Landscape, Square, Portrait
   float smallerDimension, largerDimension, imageWidthRatio=0.0, imageHeightRatio=0.0;
@@ -61,6 +63,18 @@ void setup()
       //Image smaller than CANVAS needs separate algorithm
       println("CANVAS is smaller than Image");
     }
+    if ( picWidth3 >= picHeight3 ) { //True if Landscape or Square
+    largerDimension3 = picWidth3;
+    smallerDimension3 = picHeight3;
+    widthLarger3 = true;
+    //Landscape Image larger image to smaller rectangle (or larger)
+    picWidthAdjusted2 = bottomWidth; //stretch or reduce
+    imageHeightRatio2 = smallerDimension2 / largerDimension2;
+    picHeightAdjusted2 = picWidthAdjusted2 * imageHeightRatio2;
+    println("here", picWidthAdjusted3, picHeightAdjusted3);
+    if ( picHeightAdjusted3 > bottomHeight  ) {
+      println("STOP: image is too big for rectangle layout");
+      exit(); //stop further use of the APP
   } else {
     //Image smaller than CANVAS, needs separate algorithm
     println("CANVAS is smaller than Image");
