@@ -62,49 +62,6 @@ void setup()
     
   }
   //
-  //Teaching Example: width is known to be larger
-  //Better Image Stretch Algorithm
-  if ( appWidth >= picWidth ) {
-    picWidthAdjusted = appWidth; //Stretching larger dimension
-    //
-    if ( widthLarger == true ) imageWidthRatio = largerDimension / largerDimension;
-    //
-    if ( appHeight >= picHeight ) {
-      //Calculated Dimension b/c smaller than width
-      if ( widthLarger == true ) imageHeightRatio = smallerDimension / largerDimension;
-      picHeightAdjusted = picWidthAdjusted * imageHeightRatio;
-      if ( appHeight < picHeightAdjusted ) {
-        println("STOP: image is too big for CANVAS");
-        exit(); //stop further use of the APP
-      }
-    } else {
-      //Image smaller than CANVAS needs separate algorithm
-      println("CANVAS is smaller than Image");
-    }
-   
-  } else {
-    //Image smaller than CANVAS, needs separate algorithm
-    println("CANVAS is smaller than Image");
-  }
-  //
-  if ( picWidth3 >= picHeight3 ) { //True if Landscape or Square
-    largerDimension3 = picWidth3;
-    smallerDimension3 = picHeight3;
-    widthLarger3 = true;
-    //Landscape Image larger image to smaller rectangle (or larger)
-    picWidthAdjusted2 = bottomWidth; //stretch or reduce
-    imageHeightRatio2 = smallerDimension2 / largerDimension2;
-    picHeightAdjusted2 = picWidthAdjusted2 * imageHeightRatio2;
-    println("here", picWidthAdjusted3, picHeightAdjusted3);
-    if ( picHeightAdjusted3 > bottomHeight  ) {
-      println("STOP: image is too big for rectangle layout");
-      exit(); //stop further use of the APP
-  //Verify Variable Values after Algorithm
-  println("App Width:", appWidth, " and App Height:", appHeight);
-  println("Image dimensions are:", picWidth, picHeight);
-  println("Larger Image dimension is:", largerDimension);
-  println("Adjusted Image dimesnions are (stretch is goal):", picWidthAdjusted, picHeightAdjusted);
-  //
   //Rectangular Layout and Image Drawing to CANVAS
   //rect( backgroundImageX, backgroundImageY, backgroundImageWidth, backgroundImageHeight );
   rect(topX, topY, topWidth, topHeight);
