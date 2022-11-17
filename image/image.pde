@@ -3,10 +3,10 @@ int appWidth, appHeight;
 float backgroundImageX, backgroundImageY, backgroundImageWidth, backgroundImageHeight;
 float topX, topY, topWidth, topHeight;
 float bottomX, bottomY, bottomWidth, bottomHeight;
-float picWidthAdjusted=0.0, picHeightAdjusted=0.0;
+float picWidthAdjusted1=0.0, picHeightAdjusted1=0.0;
 float picWidthAdjusted2=0.0, picHeightAdjusted2=0.0;
 float picWidthAdjusted3=0.0, picHeightAdjusted3=0.0;
-PImage pic, pic2, pic3;
+PImage pic1, pic2, pic3;
 Boolean nightMode=false;
 int tintDayMode=255, tintDayModeOpacity=50, tintRed=64, tintGreen=64, tintBlue=40, tintNightModeOpacity=85;
 //
@@ -46,7 +46,7 @@ void setup()
   int picHeight3 = 485;
   //
   //Image Orientation: Landscape, Square, Portrait
-   float smallerDimension, largerDimension, imageWidthRatio=0.0, imageHeightRatio=0.0;
+  float smallerDimension1, largerDimension1, imageWidthRatio1=0.0, imageHeightRatio1=0.0;
   float smallerDimension2, largerDimension2, imageWidthRatio2=0.0, imageHeightRatio2=0.0;
   float smallerDimension3, largerDimension3, imageWidthRatio3=0.0, imageHeightRatio3=0.0;
   Boolean widthLarger=false, heightLarger=false, widthLarger2=false, heightLarger2=false;
@@ -57,7 +57,9 @@ void setup()
   } else { //False if Portrait
     largerDimension = picHeight;
     smallerDimension = picWidth;
-    heightLarger = true;
+    //
+    //Students to create
+    
   }
   //
   //Teaching Example: width is known to be larger
