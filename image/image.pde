@@ -1,7 +1,3 @@
-//To Do, add the printlns to verify the values
-//Algorithm works when image is bigger than the CANVAS, not smaller
-//Different Algorithm is necessary - work to get above 65%
-//
 //Global Variables
 int appWidth, appHeight;
 float backgroundImageX, backgroundImageY, backgroundImageWidth, backgroundImageHeight;
@@ -21,11 +17,29 @@ void setup()
   appWidth = width;
   appHeight = height;
   //
-  //Image Dimensions for Aspect Ratio
+   //Population
+  pic = loadImage("../images used/20Ounce_NYAS-Apples2.png");
+  pic2
+  pic3 = loadImage("../istockphoto-1154935375-612x612.jpg");
+  backgroundImageX = appWidth*0;
+  backgroundImageY = appHeight*0;
+  backgroundImageWidth = appWidth-1;
+  backgroundImageHeight = appHeight-1;
+  topX = appWidth * 1/4;
+  topY = appHeight * 1/20;
+  topWidth = appWidth * 1/2;
+  topHeight = appHeight * 1/2;
+  bottomX = appWidth * 1/2;
+  bottomY = appHeight * 13/20;
+  bottomWidth = appWidth * 1/8;
+  bottomHeight = appHeight * 1/12;
+  //
+  //Image Dimensions for Aspect Ratio: image meta data
+  //Note: meta explored in MP3's or music files
   //20Ounce_NYAS-Apples2.png
   //Note: Dimensions are found in the image file / Right Click / Properties / Details
-  int picWidth = 800; //apple image
-  int picHeight = 600;
+  int picWidth1 = 800; //apple image
+  int picHeight1 = 600;
   int picWidth2 = 860; //fork image
   int picHeight2 = 529;
   int picWidth3 = 325; //banana image 
@@ -65,7 +79,13 @@ void setup()
       //Image smaller than CANVAS needs separate algorithm
       println("CANVAS is smaller than Image");
     }
-    if ( picWidth3 >= picHeight3 ) { //True if Landscape or Square
+   
+  } else {
+    //Image smaller than CANVAS, needs separate algorithm
+    println("CANVAS is smaller than Image");
+  }
+  //
+  if ( picWidth3 >= picHeight3 ) { //True if Landscape or Square
     largerDimension3 = picWidth3;
     smallerDimension3 = picHeight3;
     widthLarger3 = true;
@@ -77,28 +97,6 @@ void setup()
     if ( picHeightAdjusted3 > bottomHeight  ) {
       println("STOP: image is too big for rectangle layout");
       exit(); //stop further use of the APP
-  } else {
-    //Image smaller than CANVAS, needs separate algorithm
-    println("CANVAS is smaller than Image");
-  }
-  //
-  //Population
- pic = loadImage("../images used/20Ounce_NYAS-Apples2.png");
- pic2 = loadImage("../istockphoto-1154935375-612x612.jpg");
- pic3 
-  backgroundImageX = appWidth*0;
-  backgroundImageY = appHeight*0;
-  backgroundImageWidth = appWidth-1;
-  backgroundImageHeight = appHeight-1;
-  topX = appWidth * 1/4;
-  topY = appHeight * 1/20;
-  topWidth = appWidth * 1/2;
-  topHeight = appHeight * 1/2;
-  bottomX = appWidth * 1/2;
-  bottomY = appHeight * 13/20;
-  bottomWidth = appWidth * 1/8;
-  bottomHeight = appHeight * 1/12;
-  //
   //Verify Variable Values after Algorithm
   println("App Width:", appWidth, " and App Height:", appHeight);
   println("Image dimensions are:", picWidth, picHeight);
@@ -113,12 +111,12 @@ void setup()
   //Background Image must be single executed code
   if ( nightMode == false ) tint(tintDayMode, tintDayModeOpacity); //Gray Scale, Day use: use 1/2 tint value for white (i.e. 128/256=1/2)
   if ( nightMode == true ) tint(tintRed, tintGreen, tintBlue, tintNightModeOpacity); //RGB: Night Mode
-  image( pic, backgroundImageX, backgroundImageY, picWidthAdjusted, picHeightAdjusted);
+  image( pic1, backgroundImageX, backgroundImageY, picWidthAdjusted1, picHeightAdjusted1);
 }//End setup
 //
 void draw() {
-  image(pic2,topX, topY, topWidth, topHeight)
-  image(pic3,bottomX, bottomY, bottomWidth, bottomHeight)
+  image( pic2,topX, topY, picWidthAdjusted2, picHeightAdjusted2)
+  image( pic3, bottomX, bottomY, picWidthAdjusted3, picHeightAdjusted3)
 }//End draw
 //
 void keyPressed() {
